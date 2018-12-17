@@ -1,16 +1,6 @@
 
 console.log("app.js")
 
-var userPick;
-
-var correctAnswer = 0;
-
-var incorrectAnswer = 0;
-
-var question = 0;
-
-
-var count=24;
 
 var musicQuestion = [{
 question: "This famous band reached #1 in billboard charts in 1976 for their album “Rumours",
@@ -60,9 +50,9 @@ choices: ["Road House", "Dirty Dancing", "Red Dawn", "The Outsiders"],
 validAnswer: 1
 },
 {
- question:"What movie is this line from, said by John Travolta-Would you just watch the hair.  You know I work on my hair a long time…",
+question:"What movie is this line from, said by John Travolta-Would you just watch the hair.  You know I work on my hair a long time…",
 choices: ["Grease", "Saturday Night Fever", "Urban Cowboy", "Pulp Fiction"],
- validAnswer: 1
+validAnswer: 1
 }]
 
 var eventQuestion=[{
@@ -102,19 +92,61 @@ validAnswer: 3
 },
 {
 question:"What eighties TV show starred Tom Hanks in women's clothing?",
-choices: ["Three's Company", "Mort and Mindy", "Bosom Buddies", "Girl Talk","Facts of Life"],
+choices: ["Three's Company", "Mort and Mindy", "Bosom Buddies","Facts of Life"],
 validAnswer: 2
 },
 {
 question:"Which Golden Girls starred in two other shows before they aired?",
-choices: ["Betty White", "Rue McClanahan", "Debbie Reynolds", "Bea Arthur","Estelle Getty"],
+choices: ["Betty White", "Rue McClanahan", "Debbie Reynolds", "Bea Arthur"],
 validAnswer: 3
 },
 {
 question:"Which girl on 'Facts of Life' had braces?",
-choices: ["Blair", "Jo", "Natalie", "Tootie","Edna"],
+choices: ["Blair", "Jo", "Natalie", "Tootie"],
 validAnswer: 3
 }]
 
 
+class QuestionBoxes{
+    constructor(question,validAnswer,choices,pointValue){
+    this.question = question
+    this.validAnswer = validAnswer
+    this.pointValue = pointValue
+    this.choices = choices
+
+}
+modalClick(){
+console.log("clicked"+this.question)
+$('#showQ').html(this.question)
+
+}
+
+selectAnswer(){
+
+}
+
+updateScore(){
+
+}
+
+playAnimation(){
+
+}
+}
+let musicObjects = []
+for (i=0;i<5; i++){
+let workingObject = new QuestionBoxes(musicQuestion[i].question, musicQuestion[i].validAnswer,musicQuestion[i].choices,(i*100+(100)))
+musicObjects.push(workingObject) 
+   
+ $("#music" + (i*100+(100))).on("click",() => workingObject.modalClick())
+ 
+}
+
+let movieObjects = []
+for (i=0;i<5; i++){
+let workingObject = new QuestionBoxes(movieQuestion[i].question, movieQuestion[i].validAnswer,movieQuestion[i].choices,(i*100+(100)))
+movieObjects.push(workingObject) 
+   
+ $("#movie" + (i*100+(100))).on("click",() => workingObject.modalClick())
+}
 
