@@ -1,7 +1,6 @@
 
 console.log("app.js")
-
-
+let score=0
 var musicQuestion = [{
 question: "This famous band reached #1 in billboard charts in 1976 for their album “Rumours",
 choices: ["FleetwoodMac", "The Doors", "REO Speedwagon", "THe Doobie Brothers" ],
@@ -80,8 +79,8 @@ choices: ["Moscow", "Siberia", "Chernobyl", "Prusia"],
 validAnswer: 2
 }]
 
-var showQuestion=[{
-question:"In which Fox TV show did Johnny Dep play an undercover cop in high school?",
+var tvQuestion=[{
+question:"In which Fox TV show did Johnny Depp play an undercover cop in high school?",
 choices: ["Punky Brewster", "Cosby Show", "21 Jump Street", "A Different World"],
 validAnswer: 2   
 },
@@ -96,7 +95,7 @@ choices: ["Three's Company", "Mort and Mindy", "Bosom Buddies","Facts of Life"],
 validAnswer: 2
 },
 {
-question:"Which Golden Girls starred in two other shows before they aired?",
+question:"Which Golden Girls starred in two other shows before Golden Girls aired?",
 choices: ["Betty White", "Rue McClanahan", "Debbie Reynolds", "Bea Arthur"],
 validAnswer: 3
 },
@@ -113,36 +112,56 @@ class QuestionBoxes{
     this.validAnswer = validAnswer
     this.pointValue = pointValue
     this.choices = choices
+    this.dataChoice = 0
 
 }
-modalClick(){
-console.log("clicked"+this.question)
+modalClick(category){
+// console.log("clicked"+this.question)
 $('#showQ').html(this.question)
-$('#music'+ this.pointValue).css("background-color","yellow")
+$(category + this.pointValue).css("background-color","yellow")
+this.showAnswer()
 
 
 
 }
 
-selectAnswer(){
+showAnswer(){
+for (i=0;i<this.choices.length;i++){
+    $('#choice0'+ i).html(this.choices[i])
+    
+}
+$("#submitAnswer").on("click",() => this.checkAnswer())}
 
+checkAnswer(){
+ this.dataChoice = $(".radio:checked").attr('data-choice')
+ console.log(this.dataChoice)
+
+ if(this.dataChoice=this.validAnswer){
+     score=(score+this.pointValue)
+     
+$('.playerOne').html(score)
+$('.animationBox').css('background-image','url(images/totallyRad(goodjob).gif)')
+ }
+ 
 
 }
 
-updateScore(){
 
-}
+
+
+
 
 playAnimation(){
 
 }
+
 }
 let musicObjects = []
 for (i=0;i<5; i++){
 let workingObject = new QuestionBoxes(musicQuestion[i].question, musicQuestion[i].validAnswer,musicQuestion[i].choices,(i*100+(100)))
 musicObjects.push(workingObject) 
    
- $("#music" + (i*100+(100))).on("click",() => workingObject.modalClick())
+ $("#music" + (i*100+(100))).on("click",() => workingObject.modalClick('#music'))
 
 }
 
@@ -151,6 +170,15 @@ for (i=0;i<5; i++){
 let workingObject = new QuestionBoxes(movieQuestion[i].question, movieQuestion[i].validAnswer,movieQuestion[i].choices,(i*100+(100)))
 movieObjects.push(workingObject) 
    
- $("#movie" + (i*100+(100))).on("click",() => workingObject.modalClick())
+ $("#movie" + (i*100+(100))).on("click",() => workingObject.modalClick('#movie'))
 }
+let tvObjects = []
+for (i=0;i<5; i++){
+let workingObject = new QuestionBoxes(tvQuestion[i].question, tvQuestion[i].validAnswer,tvQuestion[i].choices,(i*100+(100)))
+tvObjects.push(workingObject) 
+   
+ $("#tv" + (i*100+(100))).on("click",() => workingObject.modalClick('#tv'))
+}
+
+
 

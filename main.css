@@ -105,6 +105,10 @@ h1{
     border: solid black 5px;
     grid-area: answerarea;
     font-family: 'Suez One', serif;
+
+}
+.set{
+    display: flex;
 }
 .animationBox{
     border: solid black 5px;

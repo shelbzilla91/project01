@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,85 +9,105 @@
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Suez+One" rel="stylesheet">
 </head>
+
 <body>
     <div class="wrapper">
-        <div class="title"><h1>70's & 80's Trivia</h1></div>
+        <div class="title">
+            <h1>70's & 80's Trivia</h1>
+        </div>
         <div class="gameBoard">
             <div class="cards cardsColumn1">
-                <div class="categoryBox catMusic"><h1>Music</h1></div>
-                <div class="categoryBox catMovies"><h1>Movies</h1></div>
-                <div class="categoryBox catShows"><h1>TV Shows</h1></div>
-                <div class="categoryBox catEvents"><h1>Events</h1></div>
+                <div class="categoryBox catMusic">
+                    <h1>Music</h1>
+                </div>
+                <div class="categoryBox catMovies">
+                    <h1>Movies</h1>
+                </div>
+                <div class="categoryBox catShows">
+                    <h1>TV Shows</h1>
+                </div>
+                <div class="categoryBox catEvents">
+                    <h1>Events</h1>
+                </div>
             </div>
             <div class="cards cardsColumn2">
-                <button type ="buttonQMusic box100"class = "questionBoxes" id ="music100">100</button>
-                <button type ="buttonQMusic box200"class = "questionBoxes" id="music200">200</button>
-                <button type ="buttonQMusic box300"class = "questionBoxes" id="music300">300</button>
-                <button type ="buttonQMusic box400"class = "questionBoxes" id="music400">400</button>
-                <button type ="buttonQMusic box500"class = "questionBoxes" id="music500">500</button>
+                <button type="buttonQMusic box100" class="questionBoxes" id="music100">100</button>
+                <button type="buttonQMusic box200" class="questionBoxes" id="music200">200</button>
+                <button type="buttonQMusic box300" class="questionBoxes" id="music300">300</button>
+                <button type="buttonQMusic box400" class="questionBoxes" id="music400">400</button>
+                <button type="buttonQMusic box500" class="questionBoxes" id="music500">500</button>
             </div>
             <div class="cards cardsColumn3">
-                <button type ="buttonQMovie01 box100" class="questionBoxes" id ="movie100">100</button>
-                <button type ="buttonQMovie02 box200" class="questionBoxes" id ="movie200">200</button>
-                <button type ="buttonQMovie03 box300" class="questionBoxes" id ="movie300">300</button>
-                <button type ="buttonQMovie04 box400" class="questionBoxes" id ="movie400">400</button>
-                <button type ="buttonQMovie05 box500" class="questionBoxes" id ="movie500">500</button>
+                <button type="buttonQMovie01 box100" class="questionBoxes" id="movie100">100</button>
+                <button type="buttonQMovie02 box200" class="questionBoxes" id="movie200">200</button>
+                <button type="buttonQMovie03 box300" class="questionBoxes" id="movie300">300</button>
+                <button type="buttonQMovie04 box400" class="questionBoxes" id="movie400">400</button>
+                <button type="buttonQMovie05 box500" class="questionBoxes" id="movie500">500</button>
             </div>
             <div class="cards cardsColumn4">
-                <button type ="buttonQTv01" class="questionBoxes"></button>
-                <button type ="buttonQTv01" class="questionBoxes"></button>
-                <button type ="buttonQTv01" class="questionBoxes"></button>
-                <button type ="buttonQTv01" class="questionBoxes"></button>
-                <button type ="buttonQTv01" class="questionBoxes"></button>
+                <button type="buttonQTv01" class="questionBoxes" id="tv100">100</button>
+                <button type="buttonQTv01" class="questionBoxes" id="tv200">200</button>
+                <button type="buttonQTv01" class="questionBoxes" id="tv300">300</button>
+                <button type="buttonQTv01" class="questionBoxes" id="tv400">400</button>
+                <button type="buttonQTv01" class="questionBoxes" id="tv500">500</button>
             </div>
             <div class="cards cardsColumn5">
-                    <div class="questionBoxes"></div>
-                    <div class="questionBoxes"></div>
-                    <div class="questionBoxes"></div>
-                    <div class="questionBoxes"></div>
-                    <div class="questionBoxes"></div>
+                <div class="questionBoxes"></div>
+                <div class="questionBoxes"></div>
+                <div class="questionBoxes"></div>
+                <div class="questionBoxes"></div>
+                <div class="questionBoxes"></div>
+            </div>
+        </div>
+
+        <div class="multipleChoiceBox">
+            <h1>Multiple Choice Box</h1>
+
+            <div class="QBox" id="showQ">
+
+                one two three four five
+            </div>
+
+
+
+
+        <div class="container">
+
+                <div class="answerBox" id="pickAnswer">
+                    <div class="set">
+                        <input type="radio" name="selectButton" data-choice="0" class="radio">
+                        <div class="choiceA" id="choice00"></div>
+                    </div>
+                    <div class="set">
+                        <input type="radio" name="selectButton" data-choice="1" class="radio">
+                        <div class="choiceB" id="choice01"> </div>
+                    </div>
+                    <div class="set">
+                        <input type="radio" name="selectButton" data-choice="2" class="radio">
+                        <div class="choiceC" id="choice02"> </div>
+                    </div>
+                    <div class="set">
+                        <input type="radio" name="selectButton" data-choice="3" class="radio">
+                        <div class="choiceD" id="choice03"></div>
+                    </div>
+                    <button type="button" id="submitAnswer">Submit</button>
                 </div>
+            </div>
         </div>
-        <div class="multipleChoiceBox"><h1>Multiple Choice Box</h1>
-       <div class="QBox" id="showQ">
-
-        one two three four five
-       </div>
-       <div class="answerBox" id="pickAnswer">
-        <div class="choiceA" id="choice01">
-            <input type="radio">choiceA
-            
+        <div class="scoreBoard">
+            <h1>Score Board</h1>
+            <div class="playerOne">
+                0
             </div>
-
-            <div class="choice02" id="choiceB">
-                <input type="radio" >choiceB
-                    
-            </div>
-            <div class="choice03" id="choiceC">
-                    <input type="radio">choiceC
-                        
-            </div>
-            <div class="choice04" id="choiceD">
-                    <input type="radio">choiceD
-                        
-            </div>
-
-       </div>
-        
-        
-        
+    
         </div>
-        <div class="scoreBoard"><h1>Score Board</h1></div>
         <div class="animationBox">Animation Box</div>
-      </div>
+    </div>
 
 </body>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
 
-  <script src="app.js"></script>
+<script defer src="app.js"></script>
+
 </html>
