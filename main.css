@@ -18,6 +18,7 @@ h1{
     height:150vh;
 
 }
+
 .gameBoard{
     border: solid black 2px;
     grid-area: gameboardarea;

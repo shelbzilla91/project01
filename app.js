@@ -106,7 +106,7 @@ choices: ["Blair", "Jo", "Natalie", "Tootie"],
 validAnswer: 3
 }]
 
-
+// create constructor intrsuctions
 class QuestionBoxes{
     constructor(question,validAnswer,choices,pointValue){
     this.question = question
@@ -118,10 +118,14 @@ class QuestionBoxes{
 modalClick(){
 console.log("clicked"+this.question)
 $('#showQ').html(this.question)
+$('#music'+ this.pointValue).css("background-color","yellow")
+
+
 
 }
 
 selectAnswer(){
+
 
 }
 
@@ -139,7 +143,7 @@ let workingObject = new QuestionBoxes(musicQuestion[i].question, musicQuestion[i
 musicObjects.push(workingObject) 
    
  $("#music" + (i*100+(100))).on("click",() => workingObject.modalClick())
- 
+
 }
 
 let movieObjects = []
