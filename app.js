@@ -136,7 +136,7 @@ checkAnswer(){
  this.dataChoice = $(".radio:checked").attr('data-choice')
  console.log(this.dataChoice)
 
- if(this.dataChoice=this.validAnswer){
+ if(this.dataChoice==this.validAnswer){
      score=(score+this.pointValue)
      
 $('.playerOne').html(score)
