@@ -158,11 +158,7 @@ class QuestionBoxes {
     checkAnswer() {
         this.dataChoice = new Number($(".radio:checked").attr('data-choice')).valueOf();
 
-        console.log("checkAnswer Ran");
-        console.log("data choice: " + this.dataChoice)
-        console.log("valid answer: " + this.validAnswer)
-        console.log(typeof(this.dataChoice))
-        console.log(typeof(this.validAnswer))
+       
 
 
         if (this.dataChoice === this.validAnswer) {
